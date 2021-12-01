@@ -1,40 +1,85 @@
-/******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
- *
- * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
- *
- *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.h> 
+ * @brief <Header file - Statistics calculation>
  *
- * <Add Extended Description Here>
+ * Calculates and prints mean, max, min, median and array
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Adi>
+ * @date <1st Dec 2021>
  *
  */
+ 
 #ifndef __STATS_H__
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Print Statistics
  *
- * <Add Extended Description Here>
+ * Function to print the statistics of an array
+ * including minimum, maximum, mean, and median.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
  */
+void print_statistics(void);
 
+/**
+ * @brief Print Array
+ *
+ * Function to print the array to the screen
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ */
+void print_array(void);
+
+/**
+ * @brief Find Median
+ *
+ * Function to find the median of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Median value>
+ */
+char find_median(void);
+
+/**
+ * @brief Find Mean
+ *
+ * Function to find the mean of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Mean value>
+ */
+char find_mean(void);
+
+/**
+ * @brief Find Maximum
+ *
+ * Function to find the maximum value of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Maximum value>
+ */
+char find_maximum(void);
+
+/**
+ * @brief Find Minimum
+ *
+ * Function to find the minimum value of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Minimum value>
+ */
+char find_minimum(void);
 
 #endif /* __STATS_H__ */

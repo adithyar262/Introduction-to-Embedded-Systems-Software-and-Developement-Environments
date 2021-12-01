@@ -1,25 +1,13 @@
-/******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
- *
- * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
- *
- *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c> 
+ * @brief <Source file - Statistics calculation>
  *
- * <Add Extended Description Here>
+ * Calculates and prints mean, max, min, median and array
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Adi>
+ * @date <1st Dec 2021>
  *
  */
-
-
 
 #include <stdio.h>
 #include "stats.h"
@@ -41,3 +29,88 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+/**
+ * @brief Print Statistics
+ *
+ * Function to print the statistics of an array
+ * including minimum, maximum, mean, and median.
+ *
+ */
+void print_statistics(void)
+{
+	return;
+}
+
+/**
+ * @brief Print Array
+ *
+ * Function to print the array to the screen
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ */
+void print_array(void)
+{
+	return;
+}
+
+/**
+ * @brief Find Median
+ *
+ * Function to find the median of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Median value>
+ */
+char find_median(void)
+{
+	return '';
+}
+
+/**
+ * @brief Find Mean
+ *
+ * Function to find the mean of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Mean value>
+ */
+char find_mean(void)
+{
+	return '';
+}
+
+/**
+ * @brief Find Maximum
+ *
+ * Function to find the maximum value of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Maximum value>
+ */
+char find_maximum(void)
+{
+	return '';
+}
+
+/**
+ * @brief Find Minimum
+ *
+ * Function to find the minimum value of an array
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ * @return <Minimum value>
+ */
+char find_minimum(void)
+{
+	return '';
+}
