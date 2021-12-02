@@ -21,7 +21,7 @@
  * including minimum, maximum, mean, and median.
  *
  */
-void print_statistics(void);
+void print_statistics(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Print Array
@@ -32,7 +32,7 @@ void print_statistics(void);
  * @param <len - Length of array>
  *
  */
-void print_array(void);
+void print_array(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Find Median
@@ -44,7 +44,7 @@ void print_array(void);
  *
  * @return <Median value>
  */
-char find_median(void);
+unsigned char find_median(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Find Mean
@@ -56,7 +56,7 @@ char find_median(void);
  *
  * @return <Mean value>
  */
-char find_mean(void);
+unsigned char find_mean(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Find Maximum
@@ -68,7 +68,7 @@ char find_mean(void);
  *
  * @return <Maximum value>
  */
-char find_maximum(void);
+unsigned char find_maximum(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Find Minimum
@@ -80,6 +80,30 @@ char find_maximum(void);
  *
  * @return <Minimum value>
  */
-char find_minimum(void);
+unsigned char find_minimum(unsigned char arr[], unsigned int len);
+
+/**
+ * @brief Swap array elements
+ *
+ * Swap elements to sort
+ *
+ * @param <xp - element 1>
+ * @param <yp - element 2>
+ *
+ */
+void swap(unsigned char* xp, unsigned char* yp);
+
+/**
+ * @brief Sort Array
+ *
+ * Sorts the array from largest to smallest.
+ * (The zeroth Element should be the largest value,
+ * and the last element (n-1) should be the smallest value.)
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ */
+void sort_array(unsigned char arr[], int len);
 
 #endif /* __STATS_H__ */

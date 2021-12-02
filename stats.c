@@ -25,6 +25,16 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+  
+  /* Print unsorted array */
+  printf("\nUnsorted array : \n\n");
+  print_array(test, SIZE);
+  
+  /* Sort array */
+  sort_array(test, SIZE);
+  
+  /* Print statitsics */
+  print_statistics(test, SIZE);
 
 }
 
@@ -35,9 +45,28 @@ void main() {
  * Function to print the statistics of an array
  * including minimum, maximum, mean, and median.
  *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
  */
-void print_statistics(void)
+void print_statistics(unsigned char arr[], unsigned int len)
 {
+	/* Print Max */
+	printf("Maximum value : %d\n", find_maximum(arr, len));
+	
+	/* Print Min */
+	printf("Minimum value : %d\n", find_minimum(arr, len));
+	
+	/* Print Mean */
+	printf("Mean value : %d\n", find_mean(arr, len));
+	
+	/* Print Median */
+	printf("Median value : %d\n\n", find_median(arr, len));
+	
+	/* Print sorted array */
+	printf("Sorted array : \n\n");
+	print_array(arr, SIZE);
+	
 	return;
 }
 
@@ -50,8 +79,13 @@ void print_statistics(void)
  * @param <len - Length of array>
  *
  */
-void print_array(void)
-{
+void print_array(unsigned char arr[], unsigned int len)
+{	
+	unsigned int i;
+    for (i = 0; i < len; i++)
+        printf("%d ", arr[i]);
+    printf("\n\n");
+	
 	return;
 }
 
@@ -65,9 +99,9 @@ void print_array(void)
  *
  * @return <Median value>
  */
-char find_median(void)
+unsigned char find_median(unsigned char arr[], unsigned int len)
 {
-	return '';
+	return (arr[(len - 1) / 2] + arr[len / 2]) / 2;;
 }
 
 /**
@@ -80,9 +114,15 @@ char find_median(void)
  *
  * @return <Mean value>
  */
-char find_mean(void)
+unsigned char find_mean(unsigned char arr[], unsigned int len)
 {
-	return '';
+	unsigned int sum = 0;
+	unsigned int i;
+    for (i = 0; i < len; i++) {
+        sum += arr[i];
+	 printf("Sum : %d ", sum);
+	}
+	return sum / len;
 }
 
 /**
@@ -95,9 +135,15 @@ char find_mean(void)
  *
  * @return <Maximum value>
  */
-char find_maximum(void)
+unsigned char find_maximum(unsigned char arr[], unsigned int len)
 {
-	return '';
+	unsigned char max = arr[0];
+	unsigned int i;
+    for (i = 0; i < len; i++) {
+        if(max < arr[i])
+			max = arr[i];
+	}
+	return max;
 }
 
 /**
@@ -110,7 +156,59 @@ char find_maximum(void)
  *
  * @return <Minimum value>
  */
-char find_minimum(void)
+unsigned char find_minimum(unsigned char arr[], unsigned int len)
 {
-	return '';
+	unsigned char min = arr[0];
+	unsigned int i;
+    for (i = 0; i < len; i++) {
+        if(min > arr[i])
+			min = arr[i];
+	}
+	return min;
 }
+
+/**
+ * @brief Swap array elements
+ *
+ * Swap elements to sort
+ *
+ * @param <xp - element 1>
+ * @param <yp - element 2>
+ *
+ */
+void swap(unsigned char* xp, unsigned char* yp)
+{
+	unsigned char temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+/**
+ * @brief Sort Array
+ *
+ * Sorts the array from largest to smallest.
+ * (The zeroth Element should be the largest value,
+ * and the last element (n-1) should be the smallest value.)
+ *
+ * @param <arr - Array of data>
+ * @param <len - Length of array>
+ *
+ */
+void sort_array(unsigned char  arr[], int len)
+{
+    int i, j, min_idx;
+
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i < len - 1; i++) {
+
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i + 1; j < len; j++)
+            if (arr[j] < arr[min_idx])
+                min_idx = j;
+
+        // Swap the found minimum element
+        // with the first element
+        swap(&arr[min_idx], &arr[i]);
+    }
+}	
